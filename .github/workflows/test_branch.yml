@@ -6,7 +6,8 @@ on:
       '**'
 
 jobs:
-  test_branch: Test Branch
+  test_branch:
+  name: Test Branch
   runs-on: ubuntu-latest
   steps:
     - name: Checkout repo
@@ -24,5 +25,4 @@ jobs:
       run: DATABASE_URL=sqlite:///test.db python create_db.py
 
     - name: Run tests
-      run: DATABASE_URL=sqlite:///test.dn pytest
-      
+      run: DATABASE_URL=sqlite:///test.db pytest
